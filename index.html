@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy to Clipboard</title>
+</head>
+<body>
+    <button id="copyButton">예약하기</button>
+    
+    <script>
+        document.getElementById('copyButton').addEventListener('click', function() {
+            const text = `Thank you for your response.💌
+Then, please fill out the information below to confirm your reservation!
+
+1. Reservation Day Time
+2. Nationality
+3. FULL Name (How to pronounce in Korean)
+4. the date of one's birth
+5. procedure
+6. Other posts available SNS
+7. Phone number
+8. consultation (o/x)`;
+
+            navigator.clipboard.writeText(text).then(function() {
+                alert('Text copied to clipboard!');
+            }).catch(function(error) {
+                alert('Failed to copy text: ', error);
+            });
+        });
+    </script>
+</body>
+</html>
